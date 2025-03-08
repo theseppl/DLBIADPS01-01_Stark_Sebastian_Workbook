@@ -37,13 +37,15 @@ class GraphAdjMatrix:
             print(self.node_labels[i] + " " + " ".join(map(str, row)))
 
 
-matrix = GraphAdjMatrix(4, True)
+matrix = GraphAdjMatrix(4, False)
 matrix.hinzufügenKante('A','A')
 matrix.hinzufügenKante('A','C')
 matrix.hinzufügenKante('C','D')
 matrix.hinzufügenKante('D','B')
-matrix.istKanteVorhanden('A', 'B')
-matrix.istKanteVorhanden('A', 'A')
-matrix.entfernenKante('A', 'A')
-matrix.istKanteVorhanden('A', 'A')
+
+matrix.hinzufügenKante('C', 'B')
+matrix.istKanteVorhanden('B', 'C')
+matrix.entfernenKante('C', 'B')
+matrix.istKanteVorhanden('B', 'C')
+
 matrix.zeigeMatrix()
