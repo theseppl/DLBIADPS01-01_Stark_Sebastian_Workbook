@@ -2,7 +2,7 @@ class GraphAdjList:
     def __init__(self, num_nodes, gerichtet=False):
         if num_nodes > 26:
             raise ValueError("Die maximale Anzahl der Knoten beträgt 26 (A bis Z).")
-        self.adj_list = {chr(i): [] for i in range(65, 65 + num_nodes)}  # 'A' bis 'Z'
+        self.adj_list = {chr(i): [] for i in range(65, 65 + num_nodes)}  # 'A' = ASCII 65 / 'B' = ASCII 66...
         self.num_nodes = num_nodes
         self.gerichtet = gerichtet  # Eigenschaft für gerichteten oder ungerichteten Graphen
 

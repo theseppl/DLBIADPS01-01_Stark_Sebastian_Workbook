@@ -4,7 +4,7 @@ class GraphAdjMatrix:
             raise ValueError("Die maximale Anzahl der Knoten beträgt 26 (A bis Z).")
         self.matrix = [[0] * num_nodes for _ in range(num_nodes)]
         self.num_nodes = num_nodes
-        self.node_labels = [chr(i) for i in range(65, 65 + num_nodes)]  # 'A' bis 'Z'
+        self.node_labels = [chr(i) for i in range(65, 65 + num_nodes)]  # 'A' = ASCII 65 / 'B' = ASCII 66...
         self.gerichtet = gerichtet  # Eigenschaft für gerichteten oder ungerichteten Graphen
 
     def hinzufügenKante(self, u, v):
