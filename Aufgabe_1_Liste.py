@@ -31,3 +31,16 @@ class GraphAdjList:
         print(f"{graph_type} - Adjazenzliste:")
         for node, neighbors in self.adj_list.items():
             print(f"{node}: {', '.join(neighbors) if neighbors else 'Keine Nachbarn'}")
+
+liste = GraphAdjList(4, False)
+liste.hinzufügenKante('A', 'A')
+liste.hinzufügenKante('A', 'C')
+liste.hinzufügenKante('C', 'D')
+liste.hinzufügenKante('D', 'B')
+
+liste.hinzufügenKante('C', 'B')
+liste.istKanteVorhanden('B', 'C')
+liste.entfernenKante('C', 'B')
+liste.istKanteVorhanden('B', 'C')
+
+liste.zeigeListe()
