@@ -24,15 +24,26 @@ class GraphAdjMatrix:
     def istKanteVorhanden(self, u, v):
         u_index = self.node_labels.index(u)
         v_index = self.node_labels.index(v)
-        return self.matrix[u_index][v_index] == 1
+        if self.matrix[u_index][v_index] == 1:
+            print(f"Es existiert eine Kante zwischen {u} und {v}.")
+        else:
+            print(f"Es existiert keine Kante zwischen {u} und {v}.")
 
     def zeigeMatrix(self):
-        print("Adjazenzmatrix:")
+        graph_type = "Gerichteter Graph" if self.gerichtet else "Ungerichteter Graph"
+        print(f"{graph_type} - Adjazenzmatrix:")
         print("  " + " ".join(self.node_labels))  # Spaltenüberschriften
         for i, row in enumerate(self.matrix):
             print(self.node_labels[i] + " " + " ".join(map(str, row)))
 
-matrix = GraphAdjMatrix(4, False)
-matrix.hinzufügenKante('A','B')
+
+matrix = GraphAdjMatrix(4, True)
 matrix.hinzufügenKante('A','A')
+matrix.hinzufügenKante('A','C')
+matrix.hinzufügenKante('C','D')
+matrix.hinzufügenKante('D','B')
+matrix.istKanteVorhanden('A', 'B')
+matrix.istKanteVorhanden('A', 'A')
+matrix.entfernenKante('A', 'A')
+matrix.istKanteVorhanden('A', 'A')
 matrix.zeigeMatrix()
