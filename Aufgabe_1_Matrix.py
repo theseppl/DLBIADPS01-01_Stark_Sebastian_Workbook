@@ -46,5 +46,4 @@ matrix.hinzufuegenKante('C', 'B')
 matrix.istKanteVorhanden('B', 'C')
 matrix.entfernenKante('C', 'B')
 matrix.istKanteVorhanden('B', 'C')
-
 matrix.zeigeMatrix()
