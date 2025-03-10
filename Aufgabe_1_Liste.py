@@ -42,5 +42,4 @@ liste.hinzufügenKante('C', 'B')
 liste.istKanteVorhanden('B', 'C')
 liste.entfernenKante('C', 'B')
 liste.istKanteVorhanden('B', 'C')
-
 liste.zeigeListe()
