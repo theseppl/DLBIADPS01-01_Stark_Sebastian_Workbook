@@ -33,7 +33,6 @@ class GraphAdjList:
             print(f"{node}: {', '.join(neighbors) if neighbors else 'Keine Nachbarn'}")
 
 liste = GraphAdjList(4, True)
-
 liste.hinzufügenKante('A', 'C')
 liste.hinzufügenKante('C', 'D')
 liste.hinzufügenKante('D', 'B')
