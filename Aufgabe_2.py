@@ -8,6 +8,12 @@ class Tier(ABC):
         self.gewicht = gewicht
         self.mikrochip_id = mikrochip_id
 
+    def laut_geben(self):
+        return f"{self.name} gibt einen Laut von sich."
+    
+    def bewegen(self):
+        return f"{self.name} bewegt sich."
+
 # Spezialisierte Unterklasse für Hunde
 class Hund(Tier):
     def __init__(self, name, alter, gewicht, mikrochip_id, gassi_gehen_zeit):
@@ -57,3 +63,5 @@ print("Die Katze hat die Mikrochip-ID " + str(katze.mikrochip_id) + ".")
 print("Die Katze spielt gerne mit einer " + katze.lieblingsspielzeug + ".")
 print(katze.miau())
 print(katze.klettern())
+print(katze.laut_geben())
+print(katze.bewegen())
