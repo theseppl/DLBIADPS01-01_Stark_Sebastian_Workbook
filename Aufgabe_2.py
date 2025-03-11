@@ -10,7 +10,6 @@ class Tier(ABC):
 
     def laut_geben(self):
         return f"{self.name} gibt einen Laut von sich."
-    
     def bewegen(self):
         return f"{self.name} bewegt sich."
 
@@ -22,7 +21,6 @@ class Hund(Tier):
 
     def bellen(self):
         return f"{self.name} bellt."
-
     def gassi_gehen(self):
         return f"{self.name} geht um {self.gassi_gehen_zeit} Gassi."
 
@@ -34,7 +32,6 @@ class Katze(Tier):
 
     def miau(self):
         return f"{self.name} miaut."
-
     def klettern(self):
         return f"{self.name} klettert mit der {self.lieblingsspielzeug} auf einen Baum."
 
@@ -46,16 +43,11 @@ class Vogel(Tier):
 
     def zwitschern(self):
         return f"{self.name} zwitschert."
-
     def fliegen(self):
         return f"{self.name} fliegt mit einer Flügelspannweite von {self.fluegelspannweite} m."
 
-# Instanzen der Klassen Hund, Katze und Vogel
-hund = Hund("Lassy", 5, 10, 123456, "10:00 Uhr")
-katze = Katze("Nele", 17, 4, 654321, "Maus")
-vogel = Vogel("Tweety", 2, 1, 987654, 0.2)
-
 # Beispiel Katze
+katze = Katze("Nele", 17, 4, 654321, "Maus")
 print("Die Katze heißt " + katze.name + ".")
 print("Die Katze ist " + str(katze.alter) + " Jahre alt.")
 print("Die Katze wiegt " + str(katze.gewicht) + " kg.")
@@ -63,5 +55,5 @@ print("Die Katze hat die Mikrochip-ID " + str(katze.mikrochip_id) + ".")
 print("Die Katze spielt gerne mit einer " + katze.lieblingsspielzeug + ".")
 print(katze.miau())
 print(katze.klettern())
-print(katze.laut_geben())
-print(katze.bewegen())
+print(katze.laut_geben()) # Methode der Basisklasse
+print(katze.bewegen()) # Methode der Basisklasse
