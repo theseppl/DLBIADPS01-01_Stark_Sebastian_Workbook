@@ -47,13 +47,19 @@ class Vogel(Tier):
         return f"{self.name} fliegt mit einer Flügelspannweite von {self.fluegelspannweite} m."
 
 # Beispiel Katze
-katze = Katze("Nele", 17, 4, 654321, "Maus")
+katze = Katze("Nele", 17, 4, 13062007, "Plüschmaus")
+
+#Ausgabe der Eigenschaften der Katze
 print("Die Katze heißt " + katze.name + ".")
 print("Die Katze ist " + str(katze.alter) + " Jahre alt.")
 print("Die Katze wiegt " + str(katze.gewicht) + " kg.")
 print("Die Katze hat die Mikrochip-ID " + str(katze.mikrochip_id) + ".")
-print("Die Katze spielt gerne mit einer " + katze.lieblingsspielzeug + ".")
+print("Die Katze spielt gerne mit ihrer " + katze.lieblingsspielzeug + ".")
+
+#Aufruf der Methoden der Katze
 print(katze.miau())
 print(katze.klettern())
+
+#Aufruf der von der Basisklasse geerbten Methoden
 print(katze.laut_geben()) # Methode der Basisklasse
 print(katze.bewegen()) # Methode der Basisklasse
