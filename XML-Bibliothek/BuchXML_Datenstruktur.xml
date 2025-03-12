@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="XML_Buch_Datenstruktur.xsd"?>
+<?xml-model href="BuchXML_Datenschema.xsd"?>
 
 <bibliothek> 
     <buch> 
