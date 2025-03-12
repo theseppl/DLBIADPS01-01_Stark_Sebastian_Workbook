@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="XML_Buch_Datenstruktur.xsd"?>
+
+<bibliothek> 
+    <buch> 
+        <titel>Der goldene Kompass</titel> 
+        <autor>Philip Pullman</autor> 
+        <jahr>1995</jahr> 
+    </buch>
+    <buch> 
+        <titel>Im Westen nichts Neues</titel> 
+        <autor>Erich Maria Remarque</autor> 
+        <jahr>1929</jahr> 
+    </buch> 
+    <buch> 
+        <titel>Der nasse Fisch</titel> 
+        <autor>Volker Kutscher</autor> 
+        <jahr>2008</jahr> 
+    </buch> 
+</bibliothek>
