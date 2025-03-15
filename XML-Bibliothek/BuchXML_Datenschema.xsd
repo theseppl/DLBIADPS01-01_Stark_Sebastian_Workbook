@@ -8,7 +8,7 @@
                         <xs:sequence>
                             <xs:element name="titel" type="xs:string" />
                             <xs:element name="autor" type="xs:string" />
-                            <xs:element name="jahr" type="xs:string" />
+                            <xs:element name="jahr" type="xs:integer" />
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
