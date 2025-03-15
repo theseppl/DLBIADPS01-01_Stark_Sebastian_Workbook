@@ -25,7 +25,8 @@
           "jahr": {
             "type": "number"
           }
-        }
+        },
+        "additionalProperties": false
       }
     }
   },
