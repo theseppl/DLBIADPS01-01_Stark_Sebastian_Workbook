@@ -1,0 +1,19 @@
+{
+    "bibliothek": [
+      {
+        "titel": "Der goldene Kompass",
+        "autor": "Philip Pullman",
+        "jahr": 1995
+      },
+      {
+        "titel": "Im Westen nichts Neues",
+        "autor": "Erich Maria Remarque",
+        "jahr": 1929
+      },
+      {
+        "titel": "Der nasse Fisch",
+        "autor": "Volker Kutscher",
+        "jahr": 2008
+      }
+    ]
+  }
