@@ -1,0 +1,29 @@
+class DPActivitySelector:
+    def __init__(self, activities):
+        self.activities = activities
+
+    def select_activities(self):
+        # Sortiere Aktivitäten nach Startzeit
+        self.activities.sort(key=lambda x: x[0])
+        n = len(self.activities)
+
+        # Erstelle DP-Tabelle
+        dp = [[0] * n for _ in range(n)]
+
+        # Fülle die DP-Tabelle
+        for length in range(2, n + 1):
+            for i in range(n - length + 1):
+                j = i + length - 1
+                max_activities = 0
+                for k in range(i + 1, j):
+                    if self.activities[i][1] <= self.activities[k][0] and self.activities[k][1] <= self.activities[j][0]:
+                        max_activities = max(max_activities, dp[i][k] + dp[k][j] + 1)
+                dp[i][j] = max_activities
+
+        return dp[0][n - 1]
+
+# Beispiel
+activities = [(2, 6), (2, 5), (1, 5), (6, 8), (5, 6)]
+selector = DPActivitySelector(activities)
+result = selector.select_activities()
+print("Maximale Anzahl Aktivitäten (DP):", result)
