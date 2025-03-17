@@ -3,27 +3,53 @@ class DPActivitySelector:
         self.activities = activities
 
     def select_activities(self):
-        # Sortiere Aktivitäten nach Startzeit
-        self.activities.sort(key=lambda x: x[0])
+        # Sortiere Aktivitäten nach Endzeit
+        self.activities.sort(key=lambda x: x[1])
         n = len(self.activities)
 
-        # Erstelle DP-Tabelle
-        dp = [[0] * n for _ in range(n)]
+        # Erstelle DP-Array: dp[i] speichert die maximale Anzahl Aktivitäten bis zur i-ten Aktivität
+        dp = [0] * n
+        prev = [-1] * n  # Für die Rückverfolgung der Aktivitäten
+        dp[0] = 1  # Die erste Aktivität kann immer gewählt werden
 
-        # Fülle die DP-Tabelle
-        for length in range(2, n + 1):
-            for i in range(n - length + 1):
-                j = i + length - 1
-                max_activities = 0
-                for k in range(i + 1, j):
-                    if self.activities[i][1] <= self.activities[k][0] and self.activities[k][1] <= self.activities[j][0]:
-                        max_activities = max(max_activities, dp[i][k] + dp[k][j] + 1)
-                dp[i][j] = max_activities
+        for i in range(1, n):
+            # Möglichkeit 1: Diese Aktivität wählen
+            include = 1
+            last_non_conflicting = -1
+            for j in range(i - 1, -1, -1):
+                if self.activities[j][1] <= self.activities[i][0]:  # Keine Überschneidung
+                    include += dp[j]
+                    last_non_conflicting = j
+                    break
 
-        return dp[0][n - 1]
+            # Möglichkeit 2: Diese Aktivität ignorieren
+            exclude = dp[i - 1]
+
+            # Wähle die bessere Möglichkeit und speichere die Entscheidung
+            if include > exclude:
+                dp[i] = include
+                prev[i] = last_non_conflicting
+            else:
+                dp[i] = exclude
+                prev[i] = prev[i - 1]
+
+        # Rekonstruiere die Liste der ausgewählten Aktivitäten
+        selected_activities = []
+        i = n - 1
+        while i >= 0:
+            if prev[i] != prev[i - 1]:  # Diese Aktivität wurde gewählt
+                selected_activities.append(self.activities[i])
+                i = prev[i]
+            else:
+                i -= 1
+
+        selected_activities.reverse()  # Aktivitäten in chronologischer Reihenfolge ausgeben
+        return dp[-1], selected_activities
 
 # Beispiel
-activities = [(2, 6), (2, 5), (1, 5), (6, 8), (5, 6)]
+activities = [(2, 4), (2, 5), (5, 6), (6, 8), (1, 6)]
 selector = DPActivitySelector(activities)
-result = selector.select_activities()
-print("Maximale Anzahl Aktivitäten (DP):", result)
+max_activities, selected_activities = selector.select_activities()
+print("Maximale Anzahl Aktivitäten (Dynamisch):", max_activities)
+print("Ausgewählte Aktivitäten:", selected_activities)
+
