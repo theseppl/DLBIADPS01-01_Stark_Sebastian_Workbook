@@ -20,7 +20,7 @@ class AktivitaetsWaehler:
         return ausgewaehlteAktivitaeten
 
 # Beispiel: Aktivitäten (Startzeit, Endzeit)
-alleAktivitäten = [(2, 4), (2, 5), (1, 5), (6, 8), (5, 6)]
+alleAktivitäten = [(2, 4), (2, 5), (5, 6), (6, 8), (1, 6)]
 waehler = AktivitaetsWaehler(alleAktivitäten)
 ergebnis = waehler.waehleAktivitaeten()
 print("Ausgewählte Aktivitäten (Greedy):", ergebnis)
