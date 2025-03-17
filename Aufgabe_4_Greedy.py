@@ -12,8 +12,8 @@ class AktivitaetsWaehler:
         letzteEndzeit = ausgewaehlteAktivitaeten[0][1]
 
         for i in range(1, len(self.gesamtAngebotAktivitaeten)):
-            # Wenn die Startzeit der aktuellen Aktivität größer oder gleich der Endzeit der letzten Aktivität ist, 
-            # wird die Aktivität zu ausgewaehlteAktivitaeten hinzugefügt.
+            # Wenn die Startzeit der aktuellen Aktivität größer oder gleich der Endzeit 
+            # der letzten Aktivität ist, wird die Aktivität zu ausgewaehlteAktivitaeten hinzugefügt.
             if self.gesamtAngebotAktivitaeten[i][0] >= letzteEndzeit:
                 ausgewaehlteAktivitaeten.append(self.gesamtAngebotAktivitaeten[i])
                 letzteEndzeit = self.gesamtAngebotAktivitaeten[i][1]
