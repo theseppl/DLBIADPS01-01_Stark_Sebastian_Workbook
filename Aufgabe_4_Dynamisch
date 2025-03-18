@@ -28,7 +28,6 @@ class DynamischerAktivitaetsWaehler:
                 if self.gesamtAngebotAktivitaeten[j][1] <= self.gesamtAngebotAktivitaeten[i][0]:
                     # waehlen wird um die Anzahl der Aktivitäten erhöht, die bis zur j-ten Aktivität gewählt wurden.
                     waehlen += arrayMaxAnzahlAktivitaeten[j]
-                    print(waehlen)
                     letzteOhneUeberschneidung = j
                     break
 
