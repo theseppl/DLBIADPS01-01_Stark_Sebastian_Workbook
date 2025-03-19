@@ -28,7 +28,7 @@ class DynamischerAktivitaetsWaehler:
                     waehlen += arrayMaxAnzahlAktivitaeten[j]
                     letzteOhneUeberschneidung = j
                     break
-                
+
             # Variable auschliessen erhält den Wert der Anzahl der Aktivitäten, die bis zur i-ten Aktivität gewählt wurden.
             auschliessen = arrayMaxAnzahlAktivitaeten[i - 1]
 
@@ -58,4 +58,5 @@ waehler = DynamischerAktivitaetsWaehler(aktivitaeten)
 maxAnzahlAktivitaeten, ausgewaehlteAktivitaeten = waehler.waehleAktivitaeten()
 print("Maximale Anzahl Aktivitäten (Dynamisch):", maxAnzahlAktivitaeten)
 print("Ausgewählte Aktivitäten:", ausgewaehlteAktivitaeten)
+
 
