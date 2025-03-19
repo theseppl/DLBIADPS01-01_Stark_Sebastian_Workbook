@@ -12,9 +12,9 @@ class DynamischerAktivitaetsWaehler:
         # Array welches die Position der vorhergehenden Aktivität speichert.
         # -1 bedeutet, dass keine Aktivität gewählt wurde.
         arrayVorhergehendeAktivitaeten = [-1] * laengeGesamtListe
-        print(arrayVorhergehendeAktivitaeten)
 
-        arrayMaxAnzahlAktivitaeten[0] = 1  # Die erste Aktivität kann immer gewählt werden. Also eine Aktivität...
+        # Die erste Aktivität kann aus der sortierten Liste immer gewählt werden.
+        arrayMaxAnzahlAktivitaeten[0] = 1  
 
         for i in range(1, laengeGesamtListe):
             # Aktivität auswählen. 
@@ -31,20 +31,18 @@ class DynamischerAktivitaetsWaehler:
                     letzteOhneUeberschneidung = j
                     break
 
-            # Aktivität ausschließen
+            # Variable auschliessen erhält den Wert der Anzahl der Aktivitäten, die bis zur i-ten Aktivität gewählt wurden.
             auschliessen = arrayMaxAnzahlAktivitaeten[i - 1]
 
-            # Wähle die bessere Möglichkeit und speichere die Entscheidung
+            # Aktivitäten wählen oder ausschließen und Entscheidung speichern.
             if waehlen > auschliessen:
                 arrayMaxAnzahlAktivitaeten[i] = waehlen
                 arrayVorhergehendeAktivitaeten[i] = letzteOhneUeberschneidung
-                print(arrayVorhergehendeAktivitaeten)
             else:
                 arrayMaxAnzahlAktivitaeten[i] = auschliessen
                 arrayVorhergehendeAktivitaeten[i] = arrayVorhergehendeAktivitaeten[i - 1]
-                print(arrayVorhergehendeAktivitaeten)
 
-        # Ausgabe der ausgewählten Aktivitäten
+        # Zusätzliche Ausgabe der ausgewählten Aktivitäten
         ausgewaehlteAktivitaeten = []
         i = laengeGesamtListe - 1
         while i >= 0:
@@ -59,8 +57,8 @@ class DynamischerAktivitaetsWaehler:
 
 # Beispiel
 aktivitaeten = [(2, 4), (2, 5), (5, 6), (6, 8), (1, 6)]
-selector = DynamischerAktivitaetsWaehler(aktivitaeten)
-max_activities, selected_activities = selector.waehleAktivitaeten()
-print("Maximale Anzahl Aktivitäten (Dynamisch):", max_activities)
-print("Ausgewählte Aktivitäten:", selected_activities)
+waehler = DynamischerAktivitaetsWaehler(aktivitaeten)
+maxAnzahlAktivitaeten, ausgewaehlteAktivitaeten = waehler.waehleAktivitaeten()
+print("Maximale Anzahl Aktivitäten (Dynamisch):", maxAnzahlAktivitaeten)
+print("Ausgewählte Aktivitäten:", ausgewaehlteAktivitaeten)
 
