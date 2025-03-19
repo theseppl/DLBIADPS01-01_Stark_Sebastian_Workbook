@@ -1,7 +1,6 @@
 class DynamischerAktivitaetsWaehler:
     def __init__(self, alleAktivitaeten):
         self.gesamtAngebotAktivitaeten = alleAktivitaeten
-
     def waehleAktivitaeten(self):
         # Sortiert Aktivitäten nach Endzeit
         self.gesamtAngebotAktivitaeten.sort(key=lambda x: x[1])
@@ -12,7 +11,6 @@ class DynamischerAktivitaetsWaehler:
         # Array welches die Position der vorhergehenden Aktivität speichert.
         # -1 bedeutet, dass keine Aktivität gewählt wurde.
         arrayVorhergehendeAktivitaeten = [-1] * laengeGesamtListe
-
         # Die erste Aktivität kann aus der sortierten Liste immer gewählt werden.
         arrayMaxAnzahlAktivitaeten[0] = 1  
 
@@ -30,7 +28,7 @@ class DynamischerAktivitaetsWaehler:
                     waehlen += arrayMaxAnzahlAktivitaeten[j]
                     letzteOhneUeberschneidung = j
                     break
-
+                
             # Variable auschliessen erhält den Wert der Anzahl der Aktivitäten, die bis zur i-ten Aktivität gewählt wurden.
             auschliessen = arrayMaxAnzahlAktivitaeten[i - 1]
 
@@ -54,7 +52,6 @@ class DynamischerAktivitaetsWaehler:
         # Aktivitäten in chronologischer Reihenfolge ausgeben
         ausgewaehlteAktivitaeten.reverse()  
         return arrayMaxAnzahlAktivitaeten[-1], ausgewaehlteAktivitaeten
-
 # Beispiel
 aktivitaeten = [(2, 4), (2, 5), (5, 6), (6, 8), (1, 6)]
 waehler = DynamischerAktivitaetsWaehler(aktivitaeten)
