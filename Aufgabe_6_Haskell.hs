@@ -1,10 +1,10 @@
--- CountEvens.hs
-module CountEvens (countEvens) where
+module Aufgabe_6_Haskell (zaehlGeradeZahlen) where
 
--- Funktion zur Berechnung der Anzahl gerader Zahlen
-countEvens :: [Int] -> Int
-countEvens xs = length (filter even xs)
+-- Funktion nimmt eine Liste von Integern entgegen und gibt die Anzahl der geraden Zahlen in der Liste zurück
+zaehlGeradeZahlen :: [Int] -> Int
+-- filtert die geraden Zahlen aus der Liste und gibt die Länge der Liste zurück
+zaehlGeradeZahlen xs = length (filter even xs)
 
 main :: IO ()
 main = do
-    print (countEvens [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+    print (zaehlGeradeZahlen [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
