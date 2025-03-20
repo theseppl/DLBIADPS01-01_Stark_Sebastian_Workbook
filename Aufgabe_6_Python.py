@@ -1,14 +1,14 @@
 class ZaehlGerade:
     @staticmethod
-    def zaehlen(numbers):
-        count = 0
-        for number in numbers:
+    def zaehlen(zahlenListe):
+        zaehler = 0
+        for zahl in zahlenListe:
             # Wenn die Zahl durch 2 teilbar ist, wird der Zähler erhöht.
-            if number % 2 == 0:
-                count += 1
-        return count
+            if zahl % 2 == 0:
+                zaehler += 1
+        return zaehler
 
-beispiel_liste = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-ergebnis = ZaehlGerade.zaehlen(beispiel_liste)
-print(f"Die Anzahl der geraden Zahlen in {beispiel_liste} ist: {ergebnis}")
+zahlenListe = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ergebnis = ZaehlGerade.zaehlen(zahlenListe)
+print(f"Die Anzahl der geraden Zahlen in {zahlenListe} ist: {ergebnis}")
 
