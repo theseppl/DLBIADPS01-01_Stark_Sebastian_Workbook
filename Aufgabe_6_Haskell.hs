@@ -1,6 +1,6 @@
 module Aufgabe_6_Haskell (zaehlGeradeZahlen) where
 
--- Funktion nimmt eine Liste von Integern entgegen und gibt die Anzahl der geraden Zahlen in der Liste zurück
+-- Funktion zaehlGeradeZahlen nimmt eine Liste von Integern entgegen und wird die Anzahl der geraden Zahlen zurückgeben
 zaehlGeradeZahlen :: [Int] -> Int
 -- filtert die geraden Zahlen aus der Liste und gibt die Länge der Liste zurück
 zaehlGeradeZahlen xs = length (filter even xs)
