@@ -16,8 +16,6 @@ class GaussSumme:
         # Sobald die Rekursion auf den Basisfall zurückkehrt, werden die Zwischenergebnisse kombiniert.
 
 n = 2
-
-# Der Speicherplatz für die Variable "ergebnis" wird erst nach Abschluss aller Rekursionen benötigt.
 ergebnis = GaussSumme.berechneSumme(n)
 
 # Ausgabe des Ergebnisses.
